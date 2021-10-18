@@ -15,4 +15,18 @@ public class Npc
   private String speech;
   private String description;
   
+ public void setName(String _name){
+  name = _name;
+ }
+ public void setSpeech(String _speech){
+  speech = _speech;
+ }
+ public void setDesc(String d){
+  description = d;
+ }
 }
+
+/*NoArgsConstructor
+setDescription(String d)
+setName(String _name)
+*/
