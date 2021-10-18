@@ -33,6 +33,10 @@ public class Room
     this.description = newDescription;
   }
   
+ public setName(String _name)
+ {
+    this.name = _name;
+ }
  
  
 }
