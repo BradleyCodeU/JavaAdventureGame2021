@@ -32,7 +32,11 @@ public class Room
   public void setDescription(String newDescription){
     this.description = newDescription;
   }
-  
+ 
+ public setItem(Item i)
+ {
+   this.roomItem = i; 
+ }
  
  
 }
