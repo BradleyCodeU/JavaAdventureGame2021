@@ -1,15 +1,15 @@
 /*
 Room
- - NoArgsConstructor
+ 👍 NoArgsConstructor
  - Room(String _name)
  - getCharacter()
  - getItem()
  - getLocationTo(String direction)
- - getName()
+ 👍 getName()
  - getPossibleDirections()
  - linkRoom(Room r, String direction)
  - setCharacter(Npc character)
- - setDescription(String d)
+ 👍 setDescription(String d)
  - setItem(Item i)
  - setName(String _name)
  - toString() // returns the description
@@ -27,16 +27,19 @@ public class Room
  
 
   
-  public Room(){
+  public Room()
+  {
     this.description = "Living Room";
     this.name = "Living Room";
   }
   
-  public String getName(){
+  public String getName()
+  {
     return name;
   }
   
-  public void setDescription(String newDescription){
+  public void setDescription(String newDescription)
+  {
     this.description = newDescription;
 
   }
