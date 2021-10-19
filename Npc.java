@@ -15,14 +15,39 @@ public class Npc
   private String speech;
   private String description;
  
-  public Npc(String newName, String newDescription){
-   this.name = newName;
-   this.description = newDescription;
+  public Npc()
+  {
+    name = "";
+    speech = "";
+    description = "";
   }
-  public String getName(){
+  
+  public Npc(String newName, String newDescription)
+  {
+    this.name = newName;
+    this.description = newDescription;
+  }
+  
+  public String getName()
+  {
     return this.name;
- }
-  public String getSpeech(){
+  }
+  public String getSpeech()
+  {
     return this.speech;
- }
+  }
+
+  public void setDescription(String d)
+  {
+    description = d;
+  }
+ 
+  public void setName(String _name)
+  {
+    name = _name;
+  }
+ 
+
+ 
+
 }
