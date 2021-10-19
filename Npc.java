@@ -14,7 +14,7 @@ public class Npc
  
   public Npc(String newName, String newDescription){
    this.name = newName;
-   this.Description = newDescription;
+   this.description = newDescription;
   }
   public String getName(){
     return this.name;
