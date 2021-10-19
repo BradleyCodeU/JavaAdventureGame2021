@@ -23,7 +23,7 @@ public class Npc
  public void setName(String _name){
   name = _name;
  }
- public void setDesc(String d){
+ public void setDescription(String d){
   description = d;
  }
 }
