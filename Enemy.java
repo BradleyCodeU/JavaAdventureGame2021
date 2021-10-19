@@ -15,12 +15,13 @@ public class Enemy extends Npc
   private String attackName;
   
   public Enemy(){
+    super();
     health = 100;
     magicWeakness = 1;
     attackName = "SLASH";
-    name = "";
-    speech = "";
-    description = "";
+    setName("");
+    setSpeech("");
+    setDescription("");
   }
   
   public String getAttackName(){
