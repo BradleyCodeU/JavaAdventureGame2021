@@ -1,11 +1,11 @@
 /*
 Item
- - NoArgsConstructor
+ 👍 NoArgsConstructor
  - Item(String _name, String _description)
  - getMagicType()
- - getName()
- - getStrength()
- - setDescription(String d)
+ 👍 getName()
+ 👍 getStrength()
+ 👍 setDescription(String d)
  - setName(String _name)
  - isBroken()
  - toString() // returns the description
