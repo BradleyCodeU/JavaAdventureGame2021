@@ -40,12 +40,20 @@ public class Room
     this.description = newDescription;
 
   }
+
+ 
+ public void setItem(Item i)
+ {
+   this.roomItem = i; 
+ }
+
   
   // sets the character to a Npc object that you inputed into this method
-  public setCharacter(Npc character)
+  public void setCharacter(Npc character)
   {
      this.character = character;
   }
+
  
   public void setDescription(String newDescription)
   {
