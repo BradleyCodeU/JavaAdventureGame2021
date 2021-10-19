@@ -58,10 +58,7 @@ public class Room
   }
 
  
-  public void setDescription(String newDescription)
-  {
-    this.description = newDescription;
-  }
+
 
 
 }
