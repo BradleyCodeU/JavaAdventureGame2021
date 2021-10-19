@@ -15,20 +15,21 @@ public class Npc
   private String speech;
   private String description;
  
- public Npc(){
+ public Npc()
+ {
   name = "";
   speech = "";
   description = "";
  }
- public void setName(String _name){
+ 
+ public void setName(String _name)
+ {
   name = _name;
  }
- public void setDescription(String d){
+ 
+ public void setDescription(String d)
+ {
   description = d;
  }
+ 
 }
-
-/*NoArgsConstructor
-setDescription(String d)
-setName(String _name)
-*/
