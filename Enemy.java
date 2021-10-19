@@ -1,10 +1,10 @@
 /*
 Enemy extends Npc
- - NoArgsConstructor
+ 👍 NoArgsConstructor
  - Enemy(String _name, String _description)
- - String getAttackName()
+ 👍 String getAttackName()
  - int getHealth
- - int getMagicWeakness()
+ 👍 int getMagicWeakness()
  - void loseHealth(int h)
  - void setAttackName()
 */
