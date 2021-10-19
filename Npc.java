@@ -12,9 +12,9 @@ public class Npc
   private String speech;
   private String description;
  
-  public Npc(String newName, String newSpeech){
+  public Npc(String newName, String newDescription){
    this.name = newName;
-   this.speech = newSpeech;
+   this.Description = newDescription;
   }
   public String getName(){
     return this.name;
