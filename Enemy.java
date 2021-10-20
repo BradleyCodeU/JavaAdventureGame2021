@@ -1,12 +1,12 @@
 /*
 Enemy extends Npc
  👍 K.S. - NoArgsConstructor
- dibs H.A. - Enemy(String _name, String _description)
+ 👍 H.A. - Enemy(String _name, String _description)
  👍 K.S. - String getAttackName()
- dibs H.A. - int getHealth
+ 👍 H.A. - int getHealth
  👍 K.S. - int getMagicWeakness()
- - void loseHealth(int h)
- dibs H.A. - void setAttackName()
+ 👍 H.A. - void loseHealth(int h)
+ 👍 Riley - void setAttackName()
 */
 public class Enemy extends Npc
 {
@@ -48,5 +48,9 @@ public class Enemy extends Npc
   
   public int getMagicWeakness(){
     return magicWeakness;
+  }
+  
+  public void setAttackName(String _attackName){
+    attackName = _attackName;
   }
 }
