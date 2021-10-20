@@ -10,6 +10,7 @@ Item
  👍 R.O. - isBroken() // returns true if strength is 0
  dibs J.M. - toString() // returns the description
  👍 R.O. - weaken() // set strength to strength div by 2
+
  */
 public class Item
 {
@@ -21,16 +22,18 @@ public class Item
   public Item()
   {
     name = "";
-    strength = 50;
+    strength = 20;
     description = "";
     magicType = 1;
   }
- public Item(String _name, String _description) {
-  name = _name;
-  description = _description;
-  strength = 50;
-  magicType = 1;
- }
+
+  public Item(String _name, String _description) {
+    name = _name;
+    description = _description;
+    strength = 20;
+    magicType = 1;
+  }
+
 
   public int getMagicType()
   {
@@ -51,15 +54,18 @@ public class Item
   {
     description = _string;
   }
+
  public void weaken() {
   strength = (strength/2);
  }
+  
  public boolean isBroken() {
-  if strength = 0 {
+  if strength <= 0 {
    return true;
   }
   else if strength > 0 {
    return false;
   }
  }
+
 }
