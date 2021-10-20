@@ -6,8 +6,8 @@ Npc
  👍 C.D. - getSpeech
  👍 Z.A. - setDescription(String d)
  👍 Z.A. - setName(String _name)
- - setSpeech
- - toString() // returns the description
+ 👍 Riley - setSpeech
+ 👍 Riley - toString() // returns the description
 */
 public class Npc
 {
@@ -48,7 +48,15 @@ public class Npc
     name = _name;
   }
  
-
+  public void setSpeech(String _speech)
+  {
+    this.speech = _speech;
+  }
+  
+  public String toString()
+  {
+    return this.description;
+  }
  
 
 }
