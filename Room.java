@@ -1,9 +1,9 @@
 /*
 Room
  👍 S.C. - NoArgsConstructor
- - Room(String _name)
- - getCharacter()
- - getItem()
+ dibs A.S. - Room(String _name)
+ dibs A.S. - getCharacter()
+ dibs A.S. - getItem()
  - getLocationTo(String direction)
  👍 S.C. - getName()
  - getPossibleDirections()
