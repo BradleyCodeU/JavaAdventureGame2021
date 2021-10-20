@@ -1,11 +1,11 @@
 /*
 Npc
- 👍 NoArgsConstructor
- - Npc(String _name, String _description)
- - getName
- - getSpeech
- 👍 setDescription(String d)
- 👍 setName(String _name)
+ 👍 Z.A. - NoArgsConstructor
+ 👍 C.D. - Npc(String _name, String _description)
+ 👍 C.D. - getName
+ 👍 C.D. - getSpeech
+ 👍 Z.A. - setDescription(String d)
+ 👍 Z.A. - setName(String _name)
  - setSpeech
  - toString() // returns the description
 */
@@ -32,6 +32,7 @@ public class Npc
   {
     return this.name;
   }
+ 
   public String getSpeech()
   {
     return this.speech;
