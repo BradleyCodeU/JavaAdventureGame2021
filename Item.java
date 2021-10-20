@@ -1,15 +1,15 @@
 /*
 Item
  👍 K.S. - NoArgsConstructor
- - Item(String _name, String _description)
+ 👍 Riley - Item(String _name, String _description)
  👍 J.M. - getMagicType()
  👍 W.M. - getName()
  👍 W.M. - getStrength()
  👍 W.M. - setDescription(String d)
  dibs J.M. - setName(String _name)
- - isBroken() // returns true if strength is 0
+ 👍 W.M. - isBroken() // returns true if strength is 0
  dibs J.M. - toString() // returns the description
- - weaken() // set strength to strength div by 2
+ 👍 W.M. - weaken() // set strength to strength div by 2
  */
 public class Item
 {
@@ -21,8 +21,16 @@ public class Item
   public Item()
   {
     name = "";
-    strength = 50;
+    strength = 20;
     description = "";
+    magicType = 1;
+  }
+ 
+  public Item(String _name, String _description)
+  {
+    name = _name;
+    strength = 20;
+    description = _description;
     magicType = 1;
   }
 
@@ -52,6 +60,7 @@ public class Item
     {
      return true;
     }
+    return false;
    }
 
 
