@@ -36,6 +36,12 @@ public class Room
   public String getName()
   {
     return name;
+  } 
+
+    // sets the character to a Npc object that you inputed into this method
+  public void setCharacter(Npc character)
+  {
+     this.character = character;
   }
   
   public void setDescription(String newDescription)
@@ -43,19 +49,19 @@ public class Room
     this.description = newDescription;
 
   }
-
  
   public void setItem(Item i)
   {
     this.roomItem = i; 
   }
+  
+  public void setName(String _name)
+  {
+    this.name = _name;
+  }
 
   
-  // sets the character to a Npc object that you inputed into this method
-  public void setCharacter(Npc character)
-  {
-     this.character = character;
-  }
+
 
  
 
