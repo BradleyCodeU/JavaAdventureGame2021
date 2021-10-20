@@ -6,7 +6,7 @@ Room
  dibs A.S. - getItem()
  - getLocationTo(String direction)
  👍 S.C. - getName()
- - getPossibleDirections()
+ 👍 Riley - getPossibleDirections()
  - linkRoom(Room r, String direction)
  👍 M.T. - setCharacter(Npc character)
  👍 S.C. - setDescription(String d)
@@ -37,6 +37,24 @@ public class Room
   {
     return name;
   } 
+  
+  public String getPossibleDirections()
+  {
+    String result = "";
+    if(this.north != null){
+      result += "north, ";
+    }
+    if(this.south != null){
+      result += "south, ";
+    }
+    if(this.east != null){
+      result += "north, ";
+    }
+    if(this.west != null){
+      result += "north, ";
+    }
+    return result;
+  }
 
     // sets the character to a Npc object that you inputed into this method
   public void setCharacter(Npc character)
