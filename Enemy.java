@@ -1,12 +1,12 @@
 /*
 Enemy extends Npc
- 👍 NoArgsConstructor
- dibs H. - Enemy(String _name, String _description)
- 👍 String getAttackName()
- dibs H. - int getHealth
- 👍 int getMagicWeakness()
+ 👍 K.S. - NoArgsConstructor
+ dibs H.A. - Enemy(String _name, String _description)
+ 👍 K.S. - String getAttackName()
+ dibs H.A. - int getHealth
+ 👍 K.S. - int getMagicWeakness()
  - void loseHealth(int h)
- dibs H. - void setAttackName()
+ dibs H.A. - void setAttackName()
 */
 public class Enemy extends Npc
 {
