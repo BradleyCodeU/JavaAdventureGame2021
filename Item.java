@@ -46,5 +46,27 @@ public class Item
     description = _string;
   }
  
+  public boolean isBroken()
+   {
+    if (strength <= 0)
+    {
+     return true;
+    }
+   }
 
+
+  //If dividing by 2, the item will never reach the "broken" state. So, if the item is weak enough (below .25), it sets itself as 0, making it actually possible to be broken.
+  public void weaken()
+  {
+   if (strength >= .25)
+    {
+     strength = strength/2;
+    }
+   else
+    {
+     strength = 0;
+    }
+  }
+
+ 
 }
