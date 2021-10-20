@@ -1,17 +1,17 @@
 /*
 Room
- 👍 NoArgsConstructor
+ 👍 S.C. - NoArgsConstructor
  - Room(String _name)
  - getCharacter()
  - getItem()
  - getLocationTo(String direction)
- 👍 getName()
+ 👍 S.C. - getName()
  - getPossibleDirections()
  - linkRoom(Room r, String direction)
- - setCharacter(Npc character)
- 👍 setDescription(String d)
- - setItem(Item i)
- - setName(String _name)
+ 👍 M.T. - setCharacter(Npc character)
+ 👍 S.C. - setDescription(String d)
+ 👍 M.T. - setItem(Item i)
+ dibs M.T. - setName(String _name)
  - toString() // returns the description
 */
 public class Room
@@ -45,10 +45,10 @@ public class Room
   }
 
  
- public void setItem(Item i)
- {
-   this.roomItem = i; 
- }
+  public void setItem(Item i)
+  {
+    this.roomItem = i; 
+  }
 
   
   // sets the character to a Npc object that you inputed into this method
