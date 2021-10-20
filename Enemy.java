@@ -24,6 +24,24 @@ public class Enemy extends Npc
     setDescription("");
   }
   
+  public Enemy(String enemyName, String enemyDescription){
+    super();
+    health = 100;
+    magicWeakness = 1;
+    attackName = "SLASH";
+    setName(enemyName);
+    setSpeech("");
+    setDescription(enemyDescription);
+  }
+  
+  public int getHealth(){
+    return health;
+  }
+  
+  public void loseHealth(int healthLost){
+    health = health - healthLost;
+  }
+  
   public String getAttackName(){
     return attackName;
   }
