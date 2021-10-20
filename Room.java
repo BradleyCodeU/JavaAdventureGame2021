@@ -1,17 +1,17 @@
 /*
 Room
- - NoArgsConstructor
- - Room(String _name)
- - getCharacter()
- - getItem()
+ 👍 S.C. - NoArgsConstructor
+ dibs A.S. - Room(String _name)
+ dibs A.S. - getCharacter()
+ dibs A.S. - getItem()
  - getLocationTo(String direction)
- - getName()
+ 👍 S.C. - getName()
  - getPossibleDirections()
  - linkRoom(Room r, String direction)
- - setCharacter(Npc character)
- - setDescription(String d)
- - setItem(Item i)
- - setName(String _name)
+ 👍 M.T. - setCharacter(Npc character)
+ 👍 S.C. - setDescription(String d)
+ 👍 M.T. - setItem(Item i)
+ dibs M.T. - setName(String _name)
  - toString() // returns the description
 */
 public class Room
@@ -25,18 +25,45 @@ public class Room
   private Room east;
   private Room west;
  
-  public String getName(){
-    return name;
- }
- 
-  public void setDescription(String newDescription){
-    this.description = newDescription;
+
+  
+  public Room()
+  {
+    this.description = "Living Room";
+    this.name = "Living Room";
   }
   
- public setName(String _name)
+  public String getName()
+  {
+    return name;
+  } 
+
+ public void setName(String _name)
  {
     this.name = _name;
  }
+
+  public void setDescription(String newDescription)
+  {
+    this.description = newDescription;
+
+  }
  
+  public void setItem(Item i)
+  {
+    this.roomItem = i; 
+  }
+
+  
+  // sets the character to a Npc object that you inputed into this method
+  public void setCharacter(Npc character)
+  {
+     this.character = character;
+  }
+
  
+
+
+
 }
+

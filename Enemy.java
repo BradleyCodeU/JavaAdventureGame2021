@@ -1,12 +1,12 @@
 /*
 Enemy extends Npc
- - NoArgsConstructor
- - Enemy(String _name, String _description)
- - String getAttackName()
- - int getHealth
- - int getMagicWeakness()
+ 👍 K.S. - NoArgsConstructor
+ dibs H.A. - Enemy(String _name, String _description)
+ 👍 K.S. - String getAttackName()
+ dibs H.A. - int getHealth
+ 👍 K.S. - int getMagicWeakness()
  - void loseHealth(int h)
- - void setAttackName()
+ dibs H.A. - void setAttackName()
 */
 public class Enemy extends Npc
 {
@@ -15,12 +15,13 @@ public class Enemy extends Npc
   private String attackName;
   
   public Enemy(){
+    super();
     health = 100;
     magicWeakness = 1;
     attackName = "SLASH";
-    name = "";
-    speech = "";
-    description = "";
+    setName("");
+    setSpeech("");
+    setDescription("");
   }
   
   public String getAttackName(){
