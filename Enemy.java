@@ -10,18 +10,29 @@ Enemy extends Npc
 */
 public class Enemy extends Npc
 {
+  // class variables
+  private static int enemyCounter = 0;
+  
+  // class methods
+  public static int getEnemyCounter()
+  {
+    return enemyCounter;
+  }
+  
+  // instance variables
   private int health;
   private int magicWeakness;
   private String attackName;
   
   public Enemy(){
     super();
-    health = 100;
-    magicWeakness = 1;
-    attackName = "SLASH";
-    setName("");
-    setSpeech("");
-    setDescription("");
+    this.health = 100;
+    this.magicWeakness = 1;
+    this.attackName = "SLASH";
+    this.setName("");
+    this.setSpeech("");
+    this.setDescription("");
+    enemyCounter++;
   }
   
   public Enemy(String enemyName, String enemyDescription){
@@ -32,6 +43,7 @@ public class Enemy extends Npc
     setName(enemyName);
     setSpeech("");
     setDescription(enemyDescription);
+    enemyCounter++;
   }
   
   public int getHealth(){
