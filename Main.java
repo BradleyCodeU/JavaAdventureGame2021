@@ -254,6 +254,10 @@ public class Main
         typewriter(5, "You died. Game over.\n");
         break;
       }
+      if(backpack != null && backpack.isBroken())
+      {
+       backpack = null;
+      }
     } // close while loop
   } // close main method
 
