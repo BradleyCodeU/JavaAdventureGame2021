@@ -316,6 +316,10 @@ public class Main
         }
       }
       enemyLoseHealth(rng, command, e, playerPunchStrength, playerKickStrength, backpack);
+      if(backpack.isBroken())
+      {
+       backpack = null;
+      }
       if(e.getHealth() > 0)
       {
         // player lose health
@@ -378,7 +382,6 @@ public class Main
       if(backpack.isBroken())
       {
         typewriter(50, "Oh no! Your " + backpack.getName() + " broke!\n");
-        backpack = null;
       }
     }
     else
