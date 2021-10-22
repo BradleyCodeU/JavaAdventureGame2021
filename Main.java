@@ -283,8 +283,9 @@ public class Main
   /*
     fight with an enemy. returns the new playerHealth.
   */
-  public static int fight(Scanner input, Random rng, Npc currentNpc, Item backpack, int playerHealth, int playerPunchStrength, int playerKickStrength)
+  public static int fight(Scanner input, Random rng, Room currentRoom, Item backpack, int playerHealth, int playerPunchStrength, int playerKickStrength)
   {
+    Npc currentNpc = currentRoom.getCharacter();
     if(currentNpc == null)
     {
       typewriter(50, "There is nobody here to fight.\n");
@@ -323,6 +324,7 @@ public class Main
       else
       {
         typewriter(50, e.getName() + " fainted! You won the fight!\n");
+        currentRoom.setCharacter(null);
         return playerHealth;
       }
     }
