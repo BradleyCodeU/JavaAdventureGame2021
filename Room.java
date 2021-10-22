@@ -72,9 +72,20 @@ public class Room
   {
     this.roomItem = i; 
   }
+  public String getCharacter() 
+  {
+   return character;
+  }
+ public String getItem()
+ {
+  return roomitem;
+ }
+  
+  
   
   public void setName(String _name)
   {
+    Room();
     this.name = _name;
   }
 
