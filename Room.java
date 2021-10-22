@@ -4,15 +4,15 @@ Room
  dibs A.S. - Room(String _name)
  dibs A.S. - getCharacter()
  dibs A.S. - getItem()
- 👍 - getLocationTo(String direction)
+ 👍 Riley - getLocationTo(String direction)
  👍 S.C. - getName()
  👍 Riley - getPossibleDirections()
- - linkRoom(Room r, String direction)
+ 👍 Riley - linkRoom(Room r, String direction)
  👍 M.T. - setCharacter(Npc character)
  👍 S.C. - setDescription(String d)
  👍 M.T. - setItem(Item i)
- dibs M.T. - setName(String _name)
- - toString() // returns the description
+ 👍 M.T.  - setName(String _name)
+ 👍 Riley - toString() // returns the description
 */
 public class Room
 {
@@ -33,7 +33,7 @@ public class Room
     this.name = "Living Room";
   }
   
-  // precodition: direction is either "north" or "south" or "east" or "west"
+  // precondition: direction is either "north" or "south" or "east" or "west"
   public Room getLocationTo(String direction)
   {
     direction = direction.toLowerCase();
@@ -71,15 +71,37 @@ public class Room
       result += "south, ";
     }
     if(this.east != null){
-      result += "north, ";
+      result += "east, ";
     }
     if(this.west != null){
-      result += "north, ";
+      result += "west, ";
     }
     return result;
   }
+ 
+  // precondition: direction is either "north" or "south" or "east" or "west"
+  public void linkRoom(Room r, String direction)
+  {
+    direction = direction.toLowerCase();
+    if (direction.equals("north"))
+    {
+      this.north = r;
+    }
+    else if (direction.equals("south"))
+    {
+      this.south = r;
+    }
+    else if (direction.equals("east"))
+    {
+      this.east = r;
+    }
+    else if (direction.equals("west"))
+    {
+      this.west = r;
+    }
+  }
 
-    // sets the character to a Npc object that you inputed into this method
+  // sets the character to a Npc object that you inputed into this method
   public void setCharacter(Npc character)
   {
      this.character = character;
@@ -124,6 +146,10 @@ public class Room
    name=_name;
   }
  
+  public String toString()
+  {
+    return this.description;
+  }
  
 
   
