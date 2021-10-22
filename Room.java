@@ -4,7 +4,7 @@ Room
  dibs A.S. - Room(String _name)
  dibs A.S. - getCharacter()
  dibs A.S. - getItem()
- - getLocationTo(String direction)
+ 👍 - getLocationTo(String direction)
  👍 S.C. - getName()
  👍 Riley - getPossibleDirections()
  - linkRoom(Room r, String direction)
@@ -33,6 +33,29 @@ public class Room
     this.name = "Living Room";
   }
   
+  // precodition: direction is either "north" or "south" or "east" or "west"
+  public Room getLocationTo(String direction)
+  {
+    direction = direction.toLowerCase();
+    if (direction.equals("north"))
+    {
+      return this.north;
+    }
+    else if (direction.equals("south"))
+    {
+      return this.south;
+    }
+    else if (direction.equals("east"))
+    {
+      return this.east;
+    }
+    else if (direction.equals("west"))
+    {
+      return this.west;
+    }
+    return null;
+  }
+ 
   public String getName()
   {
     return name;
