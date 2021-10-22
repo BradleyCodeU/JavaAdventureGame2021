@@ -237,7 +237,7 @@ public class Main
       }
       else if(command.equals("fight"))
       {
-        playerHealth = fight(input, rng, roomNpc, backpack, playerHealth, playerPunchStrength, playerKickStrength);
+        playerHealth = fight(input, rng, currentRoom, backpack, playerHealth, playerPunchStrength, playerKickStrength);
       }
       else if(command.equals("quit"))
       {
@@ -316,7 +316,7 @@ public class Main
         }
       }
       enemyLoseHealth(rng, command, e, playerPunchStrength, playerKickStrength, backpack);
-      if(backpack.isBroken())
+      if(backpack != null && backpack.isBroken())
       {
        backpack = null;
       }
