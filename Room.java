@@ -100,6 +100,20 @@ public class Room
   {
     this.name = _name;
   }
+  public String getCharacter()
+  {
+   return character;
+  }
+  public String getItem()
+  {
+   return item;
+  }
+  public Room(String name) 
+  {
+   name=_name;
+  }
+ 
+ 
 
   
 
