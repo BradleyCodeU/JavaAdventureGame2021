@@ -33,6 +33,9 @@ public class Item
     strength = 20;
     magicType = 1;
   }
+ public String toString(){
+  return description;
+  }
 
 
   public int getMagicType()
@@ -43,6 +46,10 @@ public class Item
   public String getName()
   {
     return name;
+  }
+ 
+  public void setName(String _name){
+   this.name = _name;
   }
 
   public int getStrength()
