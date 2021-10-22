@@ -213,7 +213,7 @@ public class Main
         typewriter(50, "You are holding " + backpack.toString()+"\n");
       }
       // prompt
-      typewriter(50, "WHAT NEXT? " + currentRoom.getPossibleDirections() + ", " + (currentRoom.getItem() == null ? "" : "take, ") + (currentRoom.getCharacter() == null ? "" : "talk, fight, ") + "or quit: ");
+      typewriter(50, "\nWHAT NEXT? " + currentRoom.getPossibleDirections() + (currentRoom.getItem() == null ? "" : "take, ") + (currentRoom.getCharacter() == null ? "" : "talk, fight, ") + "or quit: ");
       String command = input.next();
       command = command.toLowerCase();
       if(command.equals("north") || command.equals("south") || command.equals("east") || command.equals("west"))
