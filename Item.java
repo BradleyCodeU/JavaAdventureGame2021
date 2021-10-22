@@ -6,9 +6,9 @@ Item
  👍 W.M. - getName()
  👍 W.M. - getStrength()
  👍 W.M. - setDescription(String d)
- dibs J.M. - setName(String _name)
+ 👍 J.M. - setName(String _name)
  👍 R.O. - isBroken() // returns true if strength is 0
- dibs J.M. - toString() // returns the description
+ 👍 J.M. - toString() // returns the description
  👍 R.O. - weaken() // set strength to strength div by 2
 
  */
