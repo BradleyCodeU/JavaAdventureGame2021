@@ -12,19 +12,22 @@ Item
  👍 R.O. - weaken() // set strength to strength div by 2
 
  */
+import java.util.Random;
+
 public class Item
 {
   private String name;
   private int strength;
   private String description;
   private int magicType;
+  private Random rng = new Random();
  
   public Item()
   {
     name = "";
     strength = 20;
     description = "";
-    magicType = 1;
+    magicType = rng.nextInt(3);
   }
 
   public Item(String _name, String _description) {
