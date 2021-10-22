@@ -193,7 +193,7 @@ public class Main
     // the game loop
     while(true)
     {
-      typewriter(50, "- - -\n");
+      typewriter(50, "\n- - -\n");
       Npc roomNpc = currentRoom.getCharacter();
       Item roomItem = currentRoom.getItem();
       // describe the current room
@@ -222,13 +222,13 @@ public class Main
       }
       else if(command.equals("take"))
       {
-        takeItem(currentRoom, backpack);
+        backpack = takeItem(currentRoom, backpack);
       }
       else if(command.equals("talk"))
       {
         if(roomNpc != null)
         {
-          typewriter(50, roomNpc.getSpeech());
+          typewriter(50, roomNpc.getName() + ": \"" + roomNpc.getSpeech() + "\"\n");
         }
         else
         {
@@ -259,8 +259,9 @@ public class Main
 
   /*
     Pick up an item from the current room and put it in the backpack. If something is in the backpack, drop it in the room.
+    Returns the Item that goes in the player's backpack.
   */
-  public static void takeItem(Room currentRoom, Item backpack)
+  public static Item takeItem(Room currentRoom, Item backpack)
   {
     if(backpack != null)
     {
@@ -276,6 +277,7 @@ public class Main
       currentRoom.setItem(null);
       typewriter(50, "You pick up " + backpack + ".\n");
     }
+    return backpack;
   }
 
   /*
