@@ -247,7 +247,7 @@ public class Main
       else
       {
         typewriter(50, "I don't know how to " + command);
-        typewriter(50, ". Valid options include: " + currentRoom.getPossibleDirections() + ", " + (currentRoom.getItem() == null ? "" : "take, ") + (currentRoom.getCharacter() == null ? "" : "talk, fight, ") + "or quit.\n");
+        typewriter(50, ". Valid options include: " + currentRoom.getPossibleDirections() + (currentRoom.getItem() == null ? "" : "take, ") + (currentRoom.getCharacter() == null ? "" : "talk, fight, ") + "or quit.\n");
       }
       if(playerHealth <= 0)
       {
