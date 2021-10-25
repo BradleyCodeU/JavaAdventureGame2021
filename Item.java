@@ -70,10 +70,10 @@ public class Item
  }
   
  public boolean isBroken() {
-  if strength <= 0 {
+  if (strength <= 0) {
    return true;
   }
-  else if strength > 0 {
+  else if (strength > 0) {
    return false;
   }
  }
