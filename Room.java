@@ -32,6 +32,13 @@ public class Room
     this.description = "Living Room";
     this.name = "Living Room";
   }
+ 
+  public Room(String _name) 
+  {
+   this();
+   this.name = _name;
+  }
+ 
   
   // precondition: direction is either "north" or "south" or "east" or "west"
   public Room getLocationTo(String direction)
@@ -117,20 +124,11 @@ public class Room
   {
     this.roomItem = i; 
   }
-  public String getCharacter() 
-  {
-   return character;
-  }
- public String getItem()
- {
-  return roomitem;
- }
   
   
   
   public void setName(String _name)
   {
-    Room();
     this.name = _name;
   }
   public String getCharacter()
@@ -141,10 +139,7 @@ public class Room
   {
    return item;
   }
-  public Room(String name) 
-  {
-   name=_name;
-  }
+
  
   public String toString()
   {
