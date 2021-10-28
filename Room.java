@@ -131,13 +131,15 @@ public class Room
   {
     this.name = _name;
   }
-  public String getCharacter()
+ 
+  public Npc getCharacter()
   {
    return character;
   }
-  public String getItem()
+ 
+  public Item getItem()
   {
-   return item;
+   return roomItem;
   }
 
  
