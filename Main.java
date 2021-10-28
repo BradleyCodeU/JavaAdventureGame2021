@@ -252,7 +252,7 @@ public class Main
       else
       {
         typewriter(50, "I don't know how to " + command);
-        typewriter(50, ". Valid options include: " + currentRoom.getPossibleDirections() + ", " + (currentRoom.getItem() == null ? "" : "take, ") + (currentRoom.getCharacter() == null ? "" : "talk, fight, ") + "or quit.\n");
+        typewriter(50, ". Valid options include: " + currentRoom.getPossibleDirections() + (currentRoom.getItem() == null ? "" : "take, ") + (currentRoom.getCharacter() == null ? "" : "talk, fight, ") + "or quit.\n");
       }
       if (isGameWon == true){
         break;
@@ -268,7 +268,7 @@ public class Main
   /*
     Pick up an item from the current room and put it in the backpack. If something is in the backpack, drop it in the room.
   */
-  public static void takeItem(Room currentRoom, Item backpack)
+  public static Item takeItem(Room currentRoom, Item backpack)
   {
     if(backpack != null)
     {
@@ -284,6 +284,7 @@ public class Main
       currentRoom.setItem(null);
       typewriter(50, "You pick up " + backpack + ".\n");
     }
+    return backpack;
   }
 
   /*
