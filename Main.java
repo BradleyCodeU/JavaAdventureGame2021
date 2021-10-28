@@ -232,7 +232,7 @@ public class Main
       {
         if(roomNpc != null)
         {
-          typewriter(50, roomNpc.getSpeech());
+          typewriter(50, roomNpc.getName() + ": \"" + roomNpc.getSpeech() + "\"\n");
         }
         else
         {
