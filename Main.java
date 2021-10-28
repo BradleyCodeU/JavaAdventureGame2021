@@ -327,6 +327,10 @@ public class Main
         }
       }
       enemyLoseHealth(rng, command, e, playerPunchStrength, playerKickStrength, backpack);
+      if(backpack != null && backpack.isBroken())
+      {
+        backpack = null;
+      }
       if(e.getHealth() > 0)
       {
         // player lose health
