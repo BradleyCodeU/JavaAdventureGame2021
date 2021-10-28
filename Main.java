@@ -339,6 +339,7 @@ public class Main
       else
       {
         typewriter(50, e.getName() + " fainted! You won the fight!\n");
+        currentRoom.setCharacter(null);
         enemiesDefeated++;
         if (Enemy.enemyCounter == enemiesDefeated){
           typewriter(50, "YOU WIN!");
