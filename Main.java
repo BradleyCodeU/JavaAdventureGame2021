@@ -64,7 +64,6 @@ public class Main
  
   public static void main(String[] args)
   {
-    int enemiesDefeated = 0;
     Scanner input = new Scanner(System.in);
     Random rng = new Random();
     // create the world
@@ -341,7 +340,7 @@ public class Main
         typewriter(50, e.getName() + " fainted! You won the fight!\n");
         currentRoom.setCharacter(null);
         enemiesDefeated++;
-        if (Enemy.enemyCounter == enemiesDefeated){
+        if (Enemy.getEnemyCounter() == enemiesDefeated){
           typewriter(50, "YOU WIN!");
           isGameWon = true;
         }
