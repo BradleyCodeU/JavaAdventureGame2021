@@ -241,7 +241,7 @@ public class Main
       }
       else if(command.equals("fight"))
       {
-        playerHealth = fight(input, rng, roomNpc, backpack, playerHealth, playerPunchStrength, playerKickStrength, enemiesDefeated, isGameWon);
+        playerHealth = fight(input, rng, currentRoom, backpack, playerHealth, playerPunchStrength, playerKickStrength);
         
       }
       else if(command.equals("quit"))
