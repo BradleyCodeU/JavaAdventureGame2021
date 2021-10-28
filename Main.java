@@ -241,7 +241,7 @@ public class Main
       }
       else if(command.equals("fight"))
       {
-        playerHealth = fight(input, rng, currentRoom, backpack, playerHealth, playerPunchStrength, playerKickStrength);
+        playerHealth = fight(input, rng, currentRoom, backpack, playerHealth, playerPunchStrength, playerKickStrength, enemiesDefeated);
         
       }
       else if(command.equals("quit"))
@@ -290,7 +290,7 @@ public class Main
   /*
     fight with an enemy. returns the new playerHealth.
   */
-  public static int fight(Scanner input, Random rng, Npc currentNpc, Item backpack, int playerHealth, int playerPunchStrength, int playerKickStrength, int enemiesDefeated,boolean isGameWon)
+  public static int fight(Scanner input, Random rng, Room currentRoom, Item backpack, int playerHealth, int playerPunchStrength, int playerKickStrength, int enemiesDefeated)
   {
     if(currentNpc == null)
     {
