@@ -254,6 +254,10 @@ public class Main
         typewriter(50, "I don't know how to " + command);
         typewriter(50, ". Valid options include: " + currentRoom.getPossibleDirections() + (currentRoom.getItem() == null ? "" : "take, ") + (currentRoom.getCharacter() == null ? "" : "talk, fight, ") + "or quit.\n");
       }
+      if(backpack != null && backpack.isBroken())
+      {
+       backpack = null;
+      }
       if (isGameWon == true){
         break;
       }
