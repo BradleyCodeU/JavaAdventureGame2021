@@ -84,10 +84,10 @@ public class Main
     ballroom.setDescription("A vast room with a shiny wooden floor. Huge candlesticks guard the entrance.");
     masterBedroom.setDescription("A large room with a massive bed in the middle of it.");
     grandFoyer.setDescription("The entrance to the dark mansion. Designed to astonish guests. The hallway is north and there is are large, double-doors to the west.");
-    mainHallway.setDescription("A long dark hall that has creepy paintings on the walls");
-    theStudy.setDescription("");
-    billiardsRm.setDescription("");
-    theBasement.setDescription("");
+    mainHallway.setDescription("A long dark hall that has creepy paintings on the walls.");
+    theStudy.setDescription("A small room with a large wooden desk. The walls are covered in book shelves filled with books.");
+    billiardsRm.setDescription("A small cramped room with a large pool table in the middle. The table is in bad shape with ripped felt.");
+    theBasement.setDescription("Unlike the rest of the house, the basement is very clean and tidy. There are canned vegetables on a shelf. Has someone been living down here?");
     // link rooms together. don't forget to link the rooms in both directions.
     grandFoyer.linkRoom(mainHallway, "north");
     mainHallway.linkRoom(grandFoyer, "south");
