@@ -79,8 +79,8 @@ public class Main
     Room billiardsRm = new Room("The Billiards Room");
     Room theBasement = new Room("The Basement");
     // descriptions
-    kitchen.setDescription("A dank and dirty room buzzing with flies.");
-    diningHall.setDescription("A large room with ornate golden decorations on each wall.");
+    kitchen.setDescription("A dank and dirty room buzzing with flies. Cobwebs hang from the ceiling.");
+    diningHall.setDescription("A large room with ornate golden decorations on each wall. The kitchen is to the west.");
     ballroom.setDescription("A vast room with a shiny wooden floor. Huge candlesticks guard the entrance.");
     masterBedroom.setDescription("A large room with a massive bed in the middle of it.");
     grandFoyer.setDescription("The entrance to the dark mansion. Designed to astonish guests. The hallway is north and there is are large, double-doors to the west.");
