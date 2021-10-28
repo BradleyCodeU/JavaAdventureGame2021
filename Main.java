@@ -197,11 +197,12 @@ public class Main
     // the game loop
     while(true)
     {
-      typewriter(50, "- - -\n");
+      typewriter(50, "\n- - -\n");
       Npc roomNpc = currentRoom.getCharacter();
       Item roomItem = currentRoom.getItem();
       // describe the current room
-      typewriter(50, currentRoom.toString());
+      typewriter(5, currentRoom.getName() + "\n");
+      typewriter(5, currentRoom.toString() + "\n");
       // check if there is a character and/or item in current room
       if(roomNpc != null)
       {
