@@ -296,6 +296,7 @@ public class Main
   */
   public static int fight(Scanner input, Random rng, Room currentRoom, Item backpack, int playerHealth, int playerPunchStrength, int playerKickStrength, int enemiesDefeated)
   {
+    Npc currentNpc = currentRoom.getCharacter();
     if(currentNpc == null)
     {
       typewriter(50, "There is nobody here to fight.\n");
