@@ -59,8 +59,12 @@ import java.util.Random;
 
 public class Main
 {
+ 
+ private static boolean isGameWon = false;
+ 
   public static void main(String[] args)
   {
+    int enemiesDefeated = 0;
     Scanner input = new Scanner(System.in);
     Random rng = new Random();
     // create the world
@@ -193,7 +197,7 @@ public class Main
     // the game loop
     while(true)
     {
-      typewriter(5, "\n- - -\n");
+      typewriter(50, "\n- - -\n");
       Npc roomNpc = currentRoom.getCharacter();
       Item roomItem = currentRoom.getItem();
       // describe the current room
@@ -202,18 +206,18 @@ public class Main
       // check if there is a character and/or item in current room
       if(roomNpc != null)
       {
-        typewriter(5, "There is " + roomNpc.toString() + " here.\n");
+        typewriter(50, "There is " + roomNpc.toString() + " here.\n");
       }
       if(roomItem != null)
       {
-        typewriter(5, "There is " + roomItem.toString() + " here.\n");
+        typewriter(50, "There is " + roomItem.toString() + " here.\n");
       }
       if(backpack != null)
       {
-        typewriter(5, "You are holding " + backpack.toString()+"\n");
+        typewriter(50, "You are holding " + backpack.toString()+"\n");
       }
       // prompt
-      typewriter(5, "\nWHAT NEXT? " + currentRoom.getPossibleDirections() + (currentRoom.getItem() == null ? "" : "take, ") + (currentRoom.getCharacter() == null ? "" : "talk, fight, ") + "or quit: ");
+      typewriter(50, "\nWHAT NEXT? " + currentRoom.getPossibleDirections() + (currentRoom.getItem() == null ? "" : "take, ") + (currentRoom.getCharacter() == null ? "" : "talk, fight, ") + "or quit: ");
       String command = input.next();
       command = command.toLowerCase();
       if(command.equals("north") || command.equals("south") || command.equals("east") || command.equals("west"))
@@ -228,42 +232,45 @@ public class Main
       {
         if(roomNpc != null)
         {
-          typewriter(5, roomNpc.getName() + ": \"" + roomNpc.getSpeech() + "\"\n");
+          typewriter(50, roomNpc.getName() + ": \"" + roomNpc.getSpeech() + "\"\n");
         }
         else
         {
-          typewriter(5, "There is nobody here to talk\n");
+          typewriter(50, "There is nobody here to talk\n");
         }
       }
       else if(command.equals("fight"))
       {
-        playerHealth = fight(input, rng, currentRoom, backpack, playerHealth, playerPunchStrength, playerKickStrength);
+        playerHealth = fight(input, rng, currentRoom, backpack, playerHealth, playerPunchStrength, playerKickStrength, enemiesDefeated);
+        
       }
       else if(command.equals("quit"))
       {
-        typewriter(5, "Thanks for playing\n");
+        typewriter(50, "Thanks for playing\n");
         break;
       }
       else
       {
-        typewriter(5, "I don't know how to " + command);
-        typewriter(5, ". Valid options include: " + currentRoom.getPossibleDirections() + (currentRoom.getItem() == null ? "" : "take, ") + (currentRoom.getCharacter() == null ? "" : "talk, fight, ") + "or quit.\n");
-      }
-      if(playerHealth <= 0)
-      {
-        typewriter(5, "You died. Game over.\n");
-        break;
+        typewriter(50, "I don't know how to " + command);
+        typewriter(50, ". Valid options include: " + currentRoom.getPossibleDirections() + (currentRoom.getItem() == null ? "" : "take, ") + (currentRoom.getCharacter() == null ? "" : "talk, fight, ") + "or quit.\n");
       }
       if(backpack != null && backpack.isBroken())
       {
        backpack = null;
+      }
+      if (isGameWon == true){
+        break;
+      }
+      if(playerHealth <= 0)
+      {
+        typewriter(50, "You died. Game over.\n");
+        break;
       }
     } // close while loop
   } // close main method
 
   /*
     Pick up an item from the current room and put it in the backpack. If something is in the backpack, drop it in the room.
-    Returns the Item that goes in the player's backpack.
   */
   public static Item takeItem(Room currentRoom, Item backpack)
   {
@@ -272,14 +279,14 @@ public class Main
       Item temp = backpack;
       backpack = currentRoom.getItem();
       currentRoom.setItem(temp);
-      typewriter(5, "You drop " + temp + " and pick up " + backpack + ".\n");
+      typewriter(50, "You drop " + temp + " and pick up " + backpack + ".\n");
     }
     else
     {
       // not holding anything right now
       backpack = currentRoom.getItem();
       currentRoom.setItem(null);
-      typewriter(5, "You pick up " + backpack + ".\n");
+      typewriter(50, "You pick up " + backpack + ".\n");
     }
     return backpack;
   }
@@ -287,17 +294,17 @@ public class Main
   /*
     fight with an enemy. returns the new playerHealth.
   */
-  public static int fight(Scanner input, Random rng, Room currentRoom, Item backpack, int playerHealth, int playerPunchStrength, int playerKickStrength)
+  public static int fight(Scanner input, Random rng, Room currentRoom, Item backpack, int playerHealth, int playerPunchStrength, int playerKickStrength, int enemiesDefeated)
   {
     Npc currentNpc = currentRoom.getCharacter();
     if(currentNpc == null)
     {
-      typewriter(5, "There is nobody here to fight.\n");
+      typewriter(50, "There is nobody here to fight.\n");
       return playerHealth;
     }
     if(currentNpc instanceof Enemy == false)
     {
-      typewriter(5, currentNpc.getName() + " doesn't want to fight you.\n");
+      typewriter(50, currentNpc.getName() + " doesn't want to fight you.\n");
       return playerHealth;
     }
     Enemy e = (Enemy) currentNpc;
@@ -310,19 +317,19 @@ public class Main
       {
         if(rng.nextInt(2) == 0)
         {
-          typewriter(5, "You escaped... but " + e.getName() + " hits you as you run away...\n");
+          typewriter(50, "You escaped... but " + e.getName() + " hits you as you run away...\n");
           playerHealth = playerLoseHealth(rng, e, playerHealth);
           return playerHealth;
         }
         else
         {
-          typewriter(5, "Oof! Tried to run away, but could not escape!\n");
+          typewriter(50, "Oof! Tried to run away, but could not escape!\n");
         }
       }
       enemyLoseHealth(rng, command, e, playerPunchStrength, playerKickStrength, backpack);
       if(backpack != null && backpack.isBroken())
       {
-       backpack = null;
+        backpack = null;
       }
       if(e.getHealth() > 0)
       {
@@ -331,8 +338,13 @@ public class Main
       }
       else
       {
-        typewriter(5, e.getName() + " fainted! You won the fight!\n");
+        typewriter(50, e.getName() + " fainted! You won the fight!\n");
         currentRoom.setCharacter(null);
+        enemiesDefeated++;
+        if (Enemy.enemyCounter == enemiesDefeated){
+          typewriter(50, "YOU WIN!");
+          isGameWon = true;
+        }
         return playerHealth;
       }
     }
@@ -342,10 +354,10 @@ public class Main
   public static int playerLoseHealth(Random rng, Enemy e, int playerHealth)
   {
     int attack = rng.nextInt(6) + rng.nextInt(6) + 2;
-    typewriter(5, " > > > " + e.getName() + " uses " + e.getAttackName() + "\n");
-    typewriter(5, " > > > -" + attack + " HP\n");
+    typewriter(50, " > > > " + e.getName() + " uses " + e.getAttackName() + "\n");
+    typewriter(50, " > > > -" + attack + " HP\n");
     playerHealth -= attack;
-    typewriter(5, "You have " + playerHealth + " HP remaining\n");
+    typewriter(50, "You have " + playerHealth + " HP remaining\n");
     return playerHealth;
   }
   
@@ -354,25 +366,25 @@ public class Main
     int attack = 0;
     if(command.equals("p"))
     {
-      typewriter(5, "You used PUNCH\n");
+      typewriter(50, "You used PUNCH\n");
       attack = rng.nextInt(playerPunchStrength) + rng.nextInt(playerPunchStrength) + 1;
       if(attack >= 12)
       {
-        typewriter(5, "It's super effective!\n");
+        typewriter(50, "It's super effective!\n");
       }
     }
     else if(command.equals("k"))
     {
-      typewriter(5, "You used KICK\n");
+      typewriter(50, "You used KICK\n");
       attack = rng.nextInt(playerKickStrength) + rng.nextInt(playerKickStrength) + 1;
       if(attack >= 12)
       {
-        typewriter(5, "It's super effective!\n");
+        typewriter(50, "It's super effective!\n");
       }
     }
     else if(command.equals("x") && backpack != null)
     {
-      typewriter(5, "You used " + backpack.getName().toUpperCase() + "\n");
+      typewriter(50, "You used " + backpack.getName().toUpperCase() + "\n");
       attack = rng.nextInt(backpack.getStrength()) + rng.nextInt(backpack.getStrength()) + rng.nextInt(backpack.getStrength()) + 1;
       if(backpack.getMagicType() == e.getMagicWeakness())
       {
@@ -380,21 +392,22 @@ public class Main
       }
       if(attack >= 12)
       {
-        typewriter(5, "It's super effective!\n");
+        typewriter(50, "It's super effective!\n");
       }
       backpack.weaken();
       if(backpack.isBroken())
       {
-        typewriter(5, "Oh no! Your " + backpack.getName() + " broke!\n");
+        typewriter(50, "Oh no! Your " + backpack.getName() + " broke!\n");
+        backpack = null;
       }
     }
     else
     {
-      typewriter(5, "Sorry, I don't know how to " + command);
-      typewriter(5, ". Valid options: p, k, r" + (backpack == null ? "" : ", x = use " + backpack.getName()) + "\n");
+      typewriter(50, "Sorry, I don't know how to " + command);
+      typewriter(50, ". Valid options: p, k, r" + (backpack == null ? "" : ", x = use " + backpack.getName()) + "\n");
       return;
     }
-    typewriter(5, e.getName() + " -" + attack + " HP\n");
+    typewriter(50, e.getName() + " -" + attack + " HP\n");
     e.loseHealth(attack);
   }
 
