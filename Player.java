@@ -35,4 +35,15 @@ public class Player
   // constructor
   
   // methods
+  
+  public void pickUpItem (Item newItem) {
+    backpack = newItem;
+  }
+  public int getHealth () {
+    return health;
+  }
+  public int getEnemiesKilled (){
+    return enemiesKilled;
+  }
+  
 }
